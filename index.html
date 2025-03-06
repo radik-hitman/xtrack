@@ -1,0 +1,741 @@
+﻿<!DOCTYPE html>
+<html data-wf-domain="www.ionic.money" data-wf-page="64abf90409eff276bc2216db" data-wf-site="64abf90409eff276bc2216d6">
+    <head>
+        <meta charset="utf-8">
+        <title>X-Track</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link href="64abf90409eff276bc2216d6/css/ionicsite.webflow.ed90a7816.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/" rel="preconnect">
+        <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="anonymous">
+        <script src="ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            WebFont.load({ google: { families: ["Inter:regular,500,600,700,800,900", "Space Grotesk:300,regular,500,600,700", "IBM Plex Mono:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic"] } });
+        </script>
+        <script type="text/javascript">
+            !(function (o, c) {
+                var n = c.documentElement,
+                    t = " w-mod-";
+                (n.className += t + "js"), ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) && (n.className += t + "touch");
+            })(window, document);
+        </script>
+        <link href="img/XTRACK-ICON-X.png" rel="shortcut icon" type="image/x-icon">
+        <link href="img/XTRACK-ICON-X.png" rel="apple-touch-icon">
+        <!-- Google tag (gtag.js) -->
+        <script async="" src="gtag/js?id=G-7DDX8YPJES"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-7DDX8YPJES");
+        </script>
+
+        <style>
+            body {
+                width: 100%;
+                height: 100vh;
+                background-color: #000;
+                background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+            }
+            canvas {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+            }
+            /* modal style */
+            .hidden {
+                display: none;
+            }
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: unset;
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s linear 0.3s, opacity 0.3s ease-in-out;
+            }
+            .modal.show {
+                visibility: visible;
+                opacity: 1;
+                transition-delay: 0s;
+            }
+            .modal-overlay {
+                background-color: #0000005d;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            .modal-content {
+                position: relative;
+                width: 420px;
+                height: 420px;
+                background: #000000ce;
+                color: #39ff88;
+                padding: 20px;
+                border-radius: 8px;
+                border: 1px solid #181818;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 10;
+                text-align: center;
+            }
+            .modal-close {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                font-size: 20px;
+                cursor: pointer;
+                color: #39ff88;
+            }
+            body.modal-open {
+                overflow: hidden;
+            }
+            .navbar--cta {
+                z-index: unset;
+            }
+            .modal-content h2 {
+                font-family: Roobertprotrialvf, sans-serif;
+                color: #fff;
+            }
+            .modal-content p {
+                font-family: IBM Plex Mono, sans-serif;
+                color: #ffffffd3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="html-embed-2 w-embed"><canvas></canvas></div>
+        <section class="section is--hero">
+            <div class="navbar">
+                <div class="container is--navbar">
+                    <a href="index.html" aria-current="page" class="w-inline-block w--current"><img src="img/Asset%2012.png" width="160" loading="lazy" alt="" class="image-3"></a>
+                    <div data-w-id="c6d9cb35-1b4c-394b-8fb1-203329921333" class="navlink--container">
+                        <a href="#use-cases" class="nav--links is--first">Use Cases</a><a href="#Features" class="nav--links size1">Features</a><a href="#xtk" class="nav--links size1">$XTK</a><a href="#partner" class="nav--links size2">Partners</a>
+                        <a href="#" onclick="openModal()" class="navbar--cta negative--margin relative--to--nav--container w-button"><strong class="bold-text-2">Connect Wallet</strong></a>
+                    </div>
+                    <div data-w-id="28737ada-526b-23c5-ada8-f10170fbf4b1" data-is-ix2-target="1" class="lottie-animation" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/64abf90409eff276bc2216d6/64ad4d1fdd08b428f49c3557_lottieflow-menu-nav-09-ffffff-easey%20(1).json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="2.5" data-duration="0"></div>
+                </div>
+            </div>
+            <div class="container">
+                <header class="section--content is--hero">
+                    <h1 class="display--text">
+                        <strong class="bold-text-3">X-Track – AI Powered DeFi <br></strong><span class="text-span"><strong class="bold-text-4">Analytics for Smarter Decisions</strong></span>
+                    </h1>
+                    <p class="_16px--paragraph is--496px">X-Track is an AI-powered financial intelligence platform that provides real-time market analysis, risk assessment, and strategic insights. With Agentic AI, it tracks liquidity, detects inefficiencies, and optimizes decision-making for traders and institutions in DeFi.</p>
+                    <a href="https://dexscreener.com/bsc" class="navbar--cta w-button">Get Started</a>
+                </header>
+            </div>
+        </section>
+        <section class="features-metrics">
+            <div class="container-9">
+                <div class="features-wrapper">
+                    <div class="features-block">
+                        <div class="features-title">$300M+</div>
+                        <div class="text-block-3">Tracked Volume</div>
+                    </div>
+                    <div class="features-block">
+                        <div class="features-title">80+</div>
+                        <div class="text-block-4">Exchanges Covered</div>
+                    </div>
+                    <div class="features-block">
+                        <div class="features-title">100K+</div>
+                        <div class="text-block-5">Users</div>
+                    </div>
+                    <div class="features-block">
+                        <div class="features-title">10</div>
+                        <div class="text-block-5">Networks</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="div-block">
+            <section id="use-cases" class="section is--third">
+                <div class="container">
+                    <div class="section--content third--section">
+                        <div class="third--section--header">
+                            <div class="eight--section--header fdsa market use">
+                                <h1 id="points" class="centered-heading mark cases">Use Cases</h1>
+                                <p class="_20px-paragraph ion mark use cases">X-Track expands on-chain analytics, enabling seamless asset tracking and insights.</p>
+                            </div>
+                        </div>
+                        <div class="third--section--body">
+                            <div class="grid">
+                                <div class="usecases--card">
+                                    <img src="64abf90409eff276bc2216d6/65a9ab7dab530e903dde94f9_try1.png" loading="lazy" width="100" height="100" alt="" class="green--icons">
+                                    <h3 class="third--level--heading">Cross-Chain Tracking</h3>
+                                    <p class="_16px--paragraph is--grey is---636363">Monitor assets across multiple chains in real time. X-Track aggregates data for seamless tracking and performance insights.</p>
+                                </div>
+                                <div class="usecases--card">
+                                    <img src="64abf90409eff276bc2216d6/65a9abe59f686271b8e2f5b7_run.png" loading="lazy" width="100" height="100" alt="" class="green--icons">
+                                    <h3 class="third--level--heading">On-Chain Metrics</h3>
+                                    <p class="_16px--paragraph is--grey is---636363">Analyze asset movements, liquidity, and performance. Gain insights to optimize strategies and enhance decision-making.</p>
+                                </div>
+                                <div id="w-node-_6b23a7c8-314a-9dde-62df-72a0476be705-bc2216db" class="usecases--card">
+                                    <img src="64abf90409eff276bc2216d6/65a9ac3227e5657c1b83d192_tri.png" loading="lazy" width="100" height="100" alt="" class="green--icons">
+                                    <h3 class="third--level--heading">Automated Intelligence</h3>
+                                    <p class="_16px--paragraph is--grey is---636363">AI-driven insights optimize tracking, risk assessment, and forecasting. Stay ahead with real-time market intelligence.</p>
+                                </div>
+                            </div>
+                            <div class="cta--wrapper"><a href="#" onclick="openModal()" class="navbar--cta is--400 w-button">Explore Analytics</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section is--fourth"><div class="container"></div></section>
+            <div class="container">
+                <div class="section--content is--eighth markets">
+                    <div class="eight--section--header">
+                        <div class="eight--section--header fdsa market">
+                            <h1 id="points" class="centered-heading mark mae">Markets</h1>
+                            <p class="_20px-paragraph ion mark">X-Track supports diverse assets, continuously expanding its ecosystem.</p>
+                        </div>
+                    </div>
+                    <div class="eight--section--body markets">
+                        <div class="backers"><img src="64abf90409eff276bc2216d6/65fd326882f2587ae99a6a0b_e7f03c04-aaeeea-443e-a4d8-c7855db5277d.png" loading="lazy" width="80" height="80" alt="" class="backers--image"></div>
+                        <div class="backers">
+                            <img src="64abf90409eff276bc2216d6/65fd32791cf40e7f84c15fb7_usd-coin-usdc-logo%20%281%29.png" loading="lazy" width="80" height="80" alt="" srcset="
+                                    64abf90409eff276bc2216d6/65fd32791cf40e7f84c15fb7_usd-coin-usdc-logo%20%281%29-p-500.png   500w,
+                                    64abf90409eff276bc2216d6/65fd32791cf40e7f84c15fb7_usd-coin-usdc-logo%20%281%29-p-800.png   800w,
+                                    64abf90409eff276bc2216d6/65fd32791cf40e7f84c15fb7_usd-coin-usdc-logo%20%281%29-p-1080.png 1080w,
+                                    64abf90409eff276bc2216d6/65fd32791cf40e7f84c15fb7_usd-coin-usdc-logo%20%281%29-p-1600.png 1600w,https://cdn.prod.website-files.com/64abf90409eff276bc2216d6/65fd32791cf40e7f84c15fb7_usd-coin-usdc-logo%20(1).png        2000w" sizes="(max-width: 767px) 64px, 80px" class="backers--image">
+                        </div>
+                        <div class="backers">
+                            <img src="64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1.png" loading="lazy" width="80" height="80" alt="" srcset="
+                                    64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1-p-500.png    500w,
+                                    64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1-p-800.png    800w,
+                                    64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1-p-1080.png  1080w,
+                                    64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1-p-1600.png  1600w,
+                                    64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1-p-2000.png  2000w,
+                                    64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1-p-2600.png  2600w,
+                                    64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1-p-3200.png  3200w,https://cdn.prod.website-files.com/64abf90409eff276bc2216d6/65fd32709a2b3b8895d001de_tether-1.png        10417w" sizes="(max-width: 767px) 64px, 80px" class="backers--image">
+                        </div>
+                        <div class="backers"><img src="64abf90409eff276bc2216d6/66265f7fd7ac3e6cc21c2a4e_circlekelp.png" loading="lazy" width="80" height="80" alt="" class="backers--image"></div>
+                        <div class="backers"><img src="64abf90409eff276bc2216d6/65fd32637226fc29aa30c990_wrapped_e_eth1709646456434%20%281%29.png" loading="lazy" width="80" height="80" alt="" class="backers--image"></div>
+                        <div class="backers"><img src="64abf90409eff276bc2216d6/660295914f1dec2f2d3d31e4_200_200-2.png" loading="lazy" width="80" height="80" alt="" class="backers--image"></div>
+                        <div id="w-node-adac9eda-719a-caf0-7b44-24a274417df9-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66acacb52c98ebe52129d122_bsdETH.jpg" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66acacb52c98ebe52129d122_bsdETH-p-500.jpg 500w, 64abf90409eff276bc2216d6/66acacb52c98ebe52129d122_bsdETH.jpg 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div class="backers"><img src="64abf90409eff276bc2216d6/663010e90d17d5c07bc2617f_mbtcc.png" loading="lazy" width="80" alt="" class="backers--image"></div>
+                        <div class="backers"><img src="64abf90409eff276bc2216d6/65fc6419033d2a9ae291d9c9_wbtc.svg" loading="lazy" width="80" alt="" class="backers--image"></div>
+                        <div class="backers"><img src="64abf90409eff276bc2216d6/65fd326b9a2b3b8895cffe28_e7f03c04-eeea-443e-a4d8-c7855db5277d%20%281%29.png" loading="lazy" width="80" alt="" class="backers--image"></div>
+                        <div id="w-node-_9f0de912-6f72-116e-3f5c-d029dd92c893-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/664b56c56235c3b0d36bbd88_aerobig.png" loading="lazy" width="80" sizes="(max-width: 767px) 64px, 80px" alt="" srcset="64abf90409eff276bc2216d6/664b56c56235c3b0d36bbd88_aerobig-p-500.png 500w, 64abf90409eff276bc2216d6/664b56c56235c3b0d36bbd88_aerobig.png 800w" class="backers--image"></div>
+                        <div id="w-node-_827f8453-42d0-8402-6802-91300ab06121-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/664b56d59ca8fecfde99c636_lid.png" loading="lazy" width="80" sizes="(max-width: 767px) 64px, 80px" alt="" srcset="64abf90409eff276bc2216d6/664b56d59ca8fecfde99c636_lid-p-500.png 500w, 64abf90409eff276bc2216d6/664b56d59ca8fecfde99c636_lid.png 800w" class="backers--image"></div>
+                        <div id="w-node-d1c82beb-5f01-e867-278c-6f0737a8caeb-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/65a9bce74a91b4cafa70a5ba_Mode%20round%20black.svg" loading="lazy" width="80" alt="" class="backers--image"></div>
+                        <div id="w-node-_23d4dd86-7715-b7cb-83d2-6a65c7710efd-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66acad70e7e96e59911c0362_eUSD.jpg" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66acad70e7e96e59911c0362_eUSD-p-500.jpg 500w, 64abf90409eff276bc2216d6/66acad70e7e96e59911c0362_eUSD.jpg 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_4c6abebc-7587-17d5-a6dc-d3b2d5af2c97-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66acae1460f0766fa754d53e_eths.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66acae1460f0766fa754d53e_eths-p-500.png 500w, 64abf90409eff276bc2216d6/66acae1460f0766fa754d53e_eths.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_38ddec46-a9aa-d14f-482e-72317223d3b6-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66acae79e63a9685bbfd641c_OP.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66acae79e63a9685bbfd641c_OP-p-500.png 500w, 64abf90409eff276bc2216d6/66acae79e63a9685bbfd641c_OP.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_834f6f60-e576-56b1-c942-585ff6783010-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66acd33f5d017b9e6bd9d7e0_SNX.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66acd33f5d017b9e6bd9d7e0_SNX-p-500.png 500w, 64abf90409eff276bc2216d6/66acd33f5d017b9e6bd9d7e0_SNX.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_76e2cae8-c3b7-570d-2c1c-b877887c0cf8-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66acd58767a823a0ae06d938_LUSD.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66acd58767a823a0ae06d938_LUSD-p-500.png 500w, 64abf90409eff276bc2216d6/66acd58767a823a0ae06d938_LUSD.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_2fe8d2f6-481b-a3f1-b7d9-4544929240bf-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66acdb965089740d08111122_ssov.jpg" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66acdb965089740d08111122_ssov-p-500.jpg 500w, 64abf90409eff276bc2216d6/66acdb965089740d08111122_ssov.jpg 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_285bb30f-8cb2-2a6a-b228-024f2cf4a95f-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66acd83705742315dfd8c9e9_ttBTC.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66acd83705742315dfd8c9e9_ttBTC-p-500.png 500w, 64abf90409eff276bc2216d6/66acd83705742315dfd8c9e9_ttBTC.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_036b63e3-d5eb-494f-f765-c7e67c0277d0-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fd80d2ce9d7b98d9dbbfa1_dai1.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fd80d2ce9d7b98d9dbbfa1_dai1-p-500.png 500w, 64abf90409eff276bc2216d6/66fd80d2ce9d7b98d9dbbfa1_dai1.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_1ea30f5e-58a0-0e59-20d9-567aa09591ff-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fd81d6823db31f84f9c0a9_usde.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fd81d6823db31f84f9c0a9_usde-p-500.png 500w, 64abf90409eff276bc2216d6/66fd81d6823db31f84f9c0a9_usde.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_292f0266-610b-8325-b5b3-63267c5bd506-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fd827b1870ccec87eaaf97_hyusd.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fd827b1870ccec87eaaf97_hyusd-p-500.png 500w, 64abf90409eff276bc2216d6/66fd827b1870ccec87eaaf97_hyusd.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_37ed1368-afac-2713-4095-44e034be3b7a-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fd83170306a4a10eb6d392_rsr.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fd83170306a4a10eb6d392_rsr-p-500.png 500w, 64abf90409eff276bc2216d6/66fd83170306a4a10eb6d392_rsr.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_2f639c13-1b26-37f4-46e4-aae2826618ff-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe80535a038b880a2d921f_oeth.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe80535a038b880a2d921f_oeth-p-500.png 500w, 64abf90409eff276bc2216d6/66fe80535a038b880a2d921f_oeth.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_94272321-0784-48bb-b33a-58f090a08e37-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe809b3009d5be5582c7ae_ognn.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe809b3009d5be5582c7ae_ognn-p-500.png 500w, 64abf90409eff276bc2216d6/66fe809b3009d5be5582c7ae_ognn.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_99921f07-0a13-74b0-b0a3-00b408a88c32-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe81e337428c80595adec8_frax.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe81e337428c80595adec8_frax-p-500.png 500w, 64abf90409eff276bc2216d6/66fe81e337428c80595adec8_frax.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_66a86582-f816-e7b5-1a2c-ed77645036ab-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe825228c9a454e4ab2967_wrfeth.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe825228c9a454e4ab2967_wrfeth-p-500.png 500w, 64abf90409eff276bc2216d6/66fe825228c9a454e4ab2967_wrfeth.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_1a5ad819-ef5d-ee71-b25d-f67d57db0b7a-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe83206f58f44bfa626671_fsx.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe83206f58f44bfa626671_fsx-p-500.png 500w, 64abf90409eff276bc2216d6/66fe83206f58f44bfa626671_fsx.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-cb16d4e1-a6af-934d-897b-c0388b24641c-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe87e4c8aa9c52e3aaca24_usd%2B.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe87e4c8aa9c52e3aaca24_usd%2B-p-500.png 500w, 64abf90409eff276bc2216d6/66fe87e4c8aa9c52e3aaca24_usd%2B.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_4802c205-0548-bcb7-72c0-491424aa2c83-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe8853420a4e3411ad8ec1_cbbtc.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe8853420a4e3411ad8ec1_cbbtc-p-500.png 500w, 64abf90409eff276bc2216d6/66fe8853420a4e3411ad8ec1_cbbtc.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-e8d3bfc2-56f2-24dc-f6c0-b35750204671-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe88aedfe958e9947e8f97_eurc.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe88aedfe958e9947e8f97_eurc-p-500.png 500w, 64abf90409eff276bc2216d6/66fe88aedfe958e9947e8f97_eurc.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_18fa3738-8f3d-96be-1c7e-7b5082ab481d-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe898104d948751aa91f38_usdz.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe898104d948751aa91f38_usdz-p-500.png 500w, 64abf90409eff276bc2216d6/66fe898104d948751aa91f38_usdz.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_14b6e1d1-483b-7888-2c78-9d87c65c8cd5-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/66fe89fa58960fdce38b8796_wusdm.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/66fe89fa58960fdce38b8796_wusdm-p-500.png 500w, 64abf90409eff276bc2216d6/66fe89fa58960fdce38b8796_wusdm.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_765d8aeb-b2b4-8780-3a14-5ad0644bc864-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/672bd267cf474ccd46c0a5c0_usui.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/672bd267cf474ccd46c0a5c0_usui-p-500.png 500w, 64abf90409eff276bc2216d6/672bd267cf474ccd46c0a5c0_usui.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                        <div id="w-node-_3fd43495-8ced-b045-476b-e05784d71a53-bc2216db" class="backers"><img src="64abf90409eff276bc2216d6/672bd4342e9ff87163a9a080_usol.png" loading="lazy" width="80" height="80" alt="" srcset="64abf90409eff276bc2216d6/672bd4342e9ff87163a9a080_usol-p-500.png 500w, 64abf90409eff276bc2216d6/672bd4342e9ff87163a9a080_usol.png 800w" sizes="(max-width: 767px) 64px, 80px" class="backers--image"></div>
+                    </div>
+                </div>
+            </div>
+            <section id="Features" class="section is--fifth">
+                <div class="container">
+                    <div class="section--content third--section">
+                        <div class="fifth--section--header">
+                            <div class="eight--section--header fdsa market use">
+                                <h1 id="points" class="centered-heading mark cases">Features</h1>
+                            </div>
+                            <p class="_20px-paragraph">X-Track is engineered to redefine AI-driven financial intelligence, delivering precision, security, and efficiency.</p>
+                        </div>
+                        <div class="fifth--section--body-copy">
+                            <div class="grid for--fifth--sec">
+                                <div class="usecases--card">
+                                    <img src="64abf90409eff276bc2216d6/65a9b8c9925e1e92382bf5f5_sssss.png" loading="lazy" width="100" height="100" alt="" class="green--icons">
+                                    <h3 class="third--level--heading">Comprehensive Asset Tracking</h3>
+                                    <p class="_16px--paragraph is--grey without--max--width is---636363">Monitor and analyze a wide range of digital assets with AI-powered insights, ensuring full visibility across DeFi and TradFi strategies.</p>
+                                </div>
+                                <div id="w-node-_1cf8734a-9181-7d3a-303e-39968dca8f00-bc2216db" class="usecases--card">
+                                    <img src="64abf90409eff276bc2216d6/65a9b87077aae9b070a5ba8e_sada.png" loading="lazy" width="100" height="100" alt="" class="green--icons">
+                                    <h3 class="third--level--heading">AI-Powered Security</h3>
+                                    <p class="_16px--paragraph is--grey without--max--width is---636363">Leverage advanced AI-driven security protocols that exceed industry standards, ensuring safe and reliable transactions.</p>
+                                </div>
+                                <div class="usecases--card">
+                                    <img src="64abf90409eff276bc2216d6/65a9b8f995e7d2b0722dc13c_hal.png" loading="lazy" width="100" height="100" alt="" class="green--icons">
+                                    <h3 class="third--level--heading">Optimized Capital Utilization</h3>
+                                    <p class="_16px--paragraph is--grey without--max--width is---636363">Maximize liquidity efficiency through AI-enhanced analytics, ensuring optimal capital deployment and intelligent risk management.</p>
+                                </div>
+                                <div class="usecases--card">
+                                    <img src="64abf90409eff276bc2216d6/65a9b940ef3483d20fec7380_trtr.png" loading="lazy" width="100" height="100" alt="" class="green--icons">
+                                    <h3 class="third--level--heading">Automated Yield Optimization</h3>
+                                    <p class="_16px--paragraph is--grey without--max--width is---636363">X-Track automates yield compounding strategies, utilizing AI to enhance earnings potential and optimize DeFi opportunities.</p>
+                                </div>
+                            </div>
+                            <!--<div class="cta--wrapper">-->
+                            <!--    <a href="#" onclick="openModal()" class="navbar--cta w-button">Launch App</a>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="container"></div>
+            </section>
+
+            <section id="Features" class="section is--fifth new1">
+                <div class="container" id="xtk">
+                    <div class="section--content third--section asd">
+                        <div class="eight--section--header fdsa">
+                            <h1 id="points" class="centered-heading">$XTK</h1>
+                            <p class="_20px-paragraph ion">An AI-driven model for strategic growth.</p>
+                        </div>
+                        <div class="fifth--section--body-copy">
+                            <h4 class="heading-4 op1">
+                                <strong>The $XTK token is the foundation of X-Track’s AI-powered financial intelligence network. Operating across multiple chains, $XTK (ERC20) adapts as xXTK (xERC20) on various networks, while veXTK (ERC721) directs AI-driven insights—optimizing governance through advanced data analytics.</strong><br><br>
+                                On X-Track, users utilize $XTK to unlock AI-powered insights, track liquidity fluctuations, and enhance financial strategies. $XTK holders can stake their tokens in AI-enhanced intelligence pools, gaining deeper predictive analytics and strategic advantages.<br><br>
+                                While leveraging AI-driven data models, governance participants influence real-time intelligence flow, refining risk assessments and predictive analytics. This optimizes market foresight, sharpens decision-making processes, and enhances financial adaptability.<br><br>
+                                The impact is significant. Protocols refine liquidity intelligence, investors gain cutting-edge analytics, and market participants secure a competitive edge. Networks achieve data efficiency, while users experience superior capital utilization and financial precision.<br><br>
+                                $XTK is traded across multiple liquidity pools, ensuring deep market accessibility. Its adaptive tokenomics structure is continuously optimized based on AI-driven insights and ecosystem evolution.<br><br>
+                                <br>
+                            </h4>
+                            <div class="pricing-grid">
+                                <div id="w-node-_732b9a34-6aa5-7b48-2ce6-8d5be08e1ff7-bc2216db" class="pricing-card-three">
+                                    <img src="64abf90409eff276bc2216d6/65ad53576f01cd5e4b202d2b_hert.png" loading="lazy" width="100" alt="" class="pricing-image">
+                                    <h3 class="heading-6">
+                                        <strong>Optimize Engagement <br>
+                                            with AI</strong>
+                                    </h3>
+                                    <p class="pricing-card-text">An AI-driven framework designed to enhance engagement efficiency, focusing on data integrity and dynamic market interactions.</p>
+                                </div>
+                                <div id="w-node-_732b9a34-6aa5-7b48-2ce6-8d5be08e1ffe-bc2216db" class="pricing-card-three">
+                                    <img src="64abf90409eff276bc2216d6/65ad52d2444e30dba81402c6_tririr.png" loading="lazy" alt="" class="pricing-image">
+                                    <h3 class="heading-8"><strong>Liquidity Intelligence as a Strategic Edge</strong></h3>
+                                    <p class="pricing-card-text">Utilizing AI-driven insights, liquidity tracking is refined for precision, ensuring seamless access to real-time market intelligence.</p>
+                                </div>
+                                <div id="w-node-_732b9a34-6aa5-7b48-2ce6-8d5be08e2005-bc2216db" class="pricing-card-three">
+                                    <img src="64abf90409eff276bc2216d6/65ad5241db24d07113b51eca_procent.png" loading="lazy" alt="" class="pricing-image">
+                                    <h3 class="heading-8"><strong>AI-Enhanced Market Connectivity</strong></h3>
+                                    <p class="pricing-card-text">Engineered to streamline liquidity flows and optimize positioning, ensuring frictionless access to capital across multi-chain networks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container"></div>
+            </section>
+
+            <section id="Features" class="section is--fifth new1 par">
+                <div class="container" id="partner">
+                    <div class="section--content third--section asd parpa">
+                        <div class="fifth--section--header"></div>
+                        <div class="eight--section--header fdsa">
+                            <div class="eight--section--header fdsa market">
+                                <h1 id="points" class="centered-heading mark sda">Partners</h1>
+                                <p class="_20px-paragraph ion mark">X-Track is supported by industry-leading partners who share our vision of AI-powered financial intelligence and innovation.</p>
+                            </div>
+                        </div>
+                        <div class="eight--section--body">
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="img/Asset%2013.png" loading="lazy" width="100" height="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="img/Asset%20134.png" loading="lazy" width="100" height="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="img/Asset%2014.png" loading="lazy" width="100" height="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="img/Asset%2015.png" loading="lazy" width="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="img/Asset%2016.png" loading="lazy" width="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="img/Asset%2017.png" loading="lazy" width="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container"></div>
+            </section>
+
+            <section id="Features" class="section is--fifth new1 par sec">
+                <div class="container">
+                    <div class="section--content third--section asd parpa sec">
+                        <div class="fifth--section--header"></div>
+                        <div class="eight--section--header fdsa">
+                            <div class="eight--section--header fdsa market sec">
+                                <h1 id="points" class="centered-heading mark">Security</h1>
+                                <p class="_20px-paragraph ion mark ser">X-Track’s security ecosystem leverages AI-driven threat detection and industry-leading risk mitigation strategies.</p>
+                            </div>
+                        </div>
+                        <div class="fifth--section--body-copy"></div>
+                        <div class="eight--section--body sec">
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="64abf90409eff276bc2216d6/66b5bb560e81d91940324a23_hypern.png" loading="lazy" width="100" height="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="64abf90409eff276bc2216d6/66b5bb61949f42b5127bd668_zel.png" loading="lazy" width="100" height="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                            <div class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="64abf90409eff276bc2216d6/66b5bb6f1438e49f73401a54_immm.png" loading="lazy" width="100" height="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                            <div id="w-node-a7b6d824-e84f-fa02-de08-15b085694f17-bc2216db" class="backers">
+                                <a href="#" class="w-inline-block">
+                                    <img src="64abf90409eff276bc2216d6/679cd61c827ee386cf9ddd9c_hal3.png" loading="lazy" width="100" height="100" alt="" class="backers--image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container"></div>
+            </section>
+
+            <section class="section is--ninth"><div class="container"></div></section>
+            <div class="section second--last foot">
+                <div class="section--content diff--gap center">
+                    <a href="#" onclick="openModal()" class="navbar--cta with--border is--transparent w-button">Launch X-Track</a>
+                </div>
+                <div class="container"></div>
+            </div>
+
+            <div class="footer">
+                <div class="container">
+                    <div class="footer--content">
+                        <div class="footer--header">
+                            <a href="index.html" aria-current="page" class="link-block-2 w-inline-block w--current">
+                                <img src="img/Asset%2012.png" width="160" loading="lazy" alt="" class="brand--name">
+                            </a>
+                        </div>
+                        <div class="footer--links">
+                            <div class="footer--link--container">
+                                <a href="#use-cases" class="nav--links is--14px smol1">Use Cases</a>
+                                <a href="#Features" class="nav--links is--14px size4">Features</a>
+                                <a href="#xtk" class="nav--links is--14px">$XTK</a>
+                                <!-- <a href="#" class="nav--links is--14px size6">Docs</a>
+                                    <a href="#" class="nav--links is--14px">GitHub</a> -->
+                            </div>
+                            <div class="social--isons--container">
+                                <a href="https://x.com/x_track_" class="w-inline-block">
+                                    <svg fill="#fff" width="22" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 241.34 218.15">
+                                        <g id="Layer_2-2" data-name="Layer 2">
+                                            <path class="cls-1" d="m190.07,0h37.01l-80.85,92.41,95.11,125.74h-74.48l-58.33-76.26-66.74,76.26H4.77l86.48-98.84L0,0h76.36l52.73,69.71L190.07,0Zm-12.99,196h20.51L65.22,20.99h-22l133.86,175.01h0Z"></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <a href="https://t.me/X_Track_Portal" class="w-inline-block">
+                                    <svg fill="#fff" width="22" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 262.89 230.03">
+                                        <g id="Layer_2-2" data-name="Layer 2">
+                                            <path class="cls-1" d="m262.67,19.86c2.05-13.23-10.54-23.68-22.3-18.51L5.99,104.25c-8.44,3.71-7.82,16.49.93,19.27l48.33,15.39c9.23,2.94,19.21,1.42,27.27-4.15l108.97-75.29c3.29-2.27,6.87,2.4,4.06,5.3l-78.44,80.87c-7.61,7.85-6.1,21.14,3.05,26.88l87.82,55.07c9.85,6.18,22.52-.03,24.36-11.93l30.31-195.81Z"></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <a href="https://www.dextools.io/app/en/pairs" class="w-inline-block">
+                                    <svg fill="#fff" width="22" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 500 500" style="enable-background: new 0 0 500 500" xml:space="preserve">
+                                        <path class="st0" d="M195.7,33.7c-29,15.1-52.8,27.9-52.8,28.5c0,1.4,69.7,36.6,72.2,36.5c1.1,0,9.2-3.8,18.1-8.3l16.1-8.2l17.6,9.1
+	l17.6,9.1l28.8-13c43.3-19.5,47.9-21.7,47.1-22.3c-0.9-1-16.5-9.3-58.7-31.5c-20.4-10.7-40.2-21.3-44-23.4c-3.8-2.2-7.4-3.8-8.1-3.8
+	S224.7,18.6,195.7,33.7L195.7,33.7z M68.3,99.7L38,115.3v68.5c0,37.7,0.4,68.5,0.9,68.5c0.5,0,15.3-6.4,33.1-14.3l32.2-14.3v-72.2
+	l15.7,8.5c12.2,6.6,24.2,13.1,36.3,19.8l20.7,11.1l9.2-4.2c5.8-2.6,11.5-5.3,17.2-7.9c4.4-2.1,15.3-7,24.2-10.9
+	c8.9-3.9,17-7.9,18.2-8.8c1.5-1.2-17.3-11.6-69.7-38.5c-39.5-20.3-73.2-36.8-74.7-36.7C99.8,84,84.9,91.1,68.3,99.7L68.3,99.7z
+	 M365.9,104.1c-20.6,9.3-37.4,17.3-37.4,17.8s11.2,7.2,24.9,14.9c13.8,7.7,24.9,14.4,24.9,15s-12.1,6.4-27,13.1
+	c-14.9,6.7-52.4,23.7-83.5,37.7l-104,47.1c-26.2,11.8-49.8,22.5-52.4,23.7c-53.4,24.2-68.2,30.9-70.2,32.1c-2,1.2-2.5,7.9-2.8,41.7
+	L38,387.3l27,13.8l27,13.8l37.5-17c20.6-9.3,37.5-17.4,37.5-18s-3.8-3.1-8.4-5.5s-14.2-7.9-21.4-12.1c-7.1-4.2-14.1-8-15.7-8.5
+	c-1.5-0.5-2.8-1.4-2.8-2c0-0.5,16.5-8.4,36.7-17.4c39.2-17.5,69.1-31,133.4-60.1c28.7-13,57.5-26,86.3-39
+	c25.3-11.4,54.7-24.8,65.3-29.6l19.3-8.9l0.5-40.8l0.5-40.8l-27.4-14c-15-7.7-28-14.1-28.6-14.1C403.8,87.2,386.4,94.9,365.9,104.1
+	L365.9,104.1z M452.4,251.3c-4.1,2-12.1,5.7-17.8,8.2s-16.6,7.4-24.1,10.9l-13.7,6.3l-0.3,35.8c-0.2,19.7-0.9,35.7-1.6,35.6
+	c-1.6-0.3-27.3-13.4-53.1-27.3c-18.7-10-19.9-10.4-24.2-8.2c-2.5,1.3-17.7,8.1-33.6,15c-16,7.1-29.6,13.2-30.2,13.9
+	c-0.6,0.5,31.5,18,71.4,38.7l72.5,37.7l31-16c17-8.8,31.5-16.9,32.2-17.9c1.5-2.3,1.4-136.6-0.1-136.4
+	C460.2,247.7,456.4,249.3,452.4,251.3L452.4,251.3z M280.7,409c-5.4,2.3-10.8,4.6-16.1,7c-16.2,7-13.1,7.2-32.4-2.4
+	c-12.9-6.4-18.4-8.3-20.9-7.4c-1.8,0.7-17.3,7.7-34.5,15.5c-17.1,7.8-31.8,14.2-32.5,14.2c-7.2,0,4.8,7.2,51,30.5l54.2,27.4
+	l22.8-11.2c12.5-6.2,37.9-18.6,56.2-27.6c18.4-9,33.2-16.5,32.9-16.9c-0.3-0.3-15.7-8.2-34.3-17.6l-33.7-17L280.7,409L280.7,409z"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://dexscreener.com/bsc" class="w-inline-block">
+                                    <svg width="22" fill="#fff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 500 500" style="enable-background: new 0 0 500 500" xml:space="preserve">
+                                        <path class="st0" d="M292.5,179.2c15.1-7.5,34.4-18.6,53.6-33.8c4.1,8.4,4.5,15.8,2.4,21.7c-1.5,4.2-4.3,7.8-8,10.7
+	c-4,3.1-9,5.4-14.4,6.6C315.8,186.9,303.6,185.5,292.5,179.2 M295.2,256.5l20,11.6c-40.9,22.9-52,65.5-65.2,106.9
+	c-13.2-41.4-24.3-84-65.2-106.9l20-11.6c4-1.5,6.5-5.4,6.3-9.6c-1.8-38.8,8.6-56,22.8-66.7c5.1-3.9,10.6-5.8,16.1-5.8
+	s11,1.9,16.1,5.8c14.1,10.8,24.6,27.9,22.8,66.7C288.6,251.1,291.2,255,295.2,256.5L295.2,256.5L295.2,256.5z M250,3.1
+	c23.1,0.6,46.3,5.1,66.5,13.8c13.9,6.1,27,14.1,38.7,23.6c5.3,4.3,9.7,8.5,14.5,13.3c13,0.5,32-14,40.9-27.5
+	C395.4,76.2,326,135,278,157.5l0,0c-8.6-6.6-18.3-9.9-28-9.9s-19.4,3.3-28,9.9c0,0,0,0-0.1,0C173.9,135,104.6,76.2,89.4,26.4
+	c8.8,13.5,27.8,28,40.9,27.5c4.8-4.8,9.2-9,14.5-13.3C156.6,31,169.6,23,183.5,17C203.7,8.3,226.9,3.8,250,3.1 M207.4,179.2
+	c-15.1-7.5-34.4-18.6-53.6-33.9c-4.1,8.4-4.5,15.8-2.4,21.7c1.5,4.2,4.3,7.8,7.9,10.7c4,3.1,8.9,5.4,14.4,6.6
+	C184.2,186.9,196.4,185.5,207.4,179.2"></path>
+                                        <path class="st0" d="M367.3,126.8c10.6-10.7,20-22.5,27.5-33.1l3.8,7.2c12.3,24.6,18.7,49.1,18.7,76.6v43.7l0.2,22.7
+	c0.9,55.6,12.9,111.9,40.2,163.5l-57.1-46l-40.4,65.5L317.8,387L250,497l-67.8-110l-42.4,39.9l-40.4-65.5l-57.1,46
+	c27.3-51.5,39.3-107.8,40.2-163.5l0.2-22.7v-43.7c0-27.6,6.4-52,18.7-76.6l3.8-7.2c7.5,10.6,16.9,22.4,27.5,33.1l-3.3,6.9
+	c-6.4,13.4-8.6,28.3-3.6,42.5c3.2,9.1,9.1,17,16.7,23c7.4,5.8,16.1,9.7,25.3,11.8c6,1.3,12,1.9,18.1,1.7c-1.4,8-2,16.2-2.1,24.7
+	l-53.8,31l41.5,23.3c3.3,1.9,6.5,4,9.4,6.4c34.2,30.8,54.8,121.7,69,166.1c14.1-44.4,34.7-135.4,69-166.1c3-2.4,6.1-4.5,9.5-6.4
+	l41.5-23.3l-53.8-31.1c0-8.4-0.6-16.7-2.1-24.7c6,0.2,12.1-0.4,18.1-1.7c9.1-2.1,17.9-6,25.3-11.8c7.6-6,13.5-13.8,16.7-23
+	c5-14.2,2.9-29.1-3.5-42.5L367.3,126.8L367.3,126.8L367.3,126.8z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer--address">
+                            <div class="address--left">
+                                <p class="_16px--paragraph copyright">© 2024 X-Track. All rights reserved</p>
+                            </div>
+                            <div class="address--right">
+                                <a href="#" class="nav--links is--last">Contact Us</a>
+                                <a href="#" class="nav--links is--last">Privacy Policy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-overlay" onclick="closeModal()"></div>
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <img src="img/info%20%282%29.png" width="160" alt="" srcset="">
+                <h2>Under Development</h2>
+                <p>X-Track is currently in development. Features and functionalities are subject to change. Stay tuned for updates and improvements.</p>
+            </div>
+        </div>
+
+        <!-- Modal Script -->
+        <script>
+            function openModal() {
+                document.getElementById("modal").classList.add("show");
+                document.body.classList.add("modal-open");
+            }
+            function closeModal() {
+                document.getElementById("modal").classList.remove("show");
+                document.body.classList.remove("modal-open");
+            }
+        </script>
+
+        <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8de04.js?site=64abf90409eff276bc2216d6" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="64abf90409eff276bc2216d6/js/webflow.014ec3ad.adf27ceab0c742c4.js" type="text/javascript"></script>
+        <script>
+            /*          *     .        *  .    *    *   . 
+ .  *  move your mouse to over the stars   .
+ *  .  .   change these values:   .  *
+   .      * .        .          * .       */
+            const STAR_COLOR = "#fff";
+            const STAR_SIZE = 3;
+            const STAR_MIN_SCALE = 1.5;
+            const OVERFLOW_THRESHOLD = 50;
+            const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8;
+
+            const canvas = document.querySelector("canvas"),
+                context = canvas.getContext("2d");
+
+            let scale = 1, // device pixel ratio
+                width,
+                height;
+
+            let stars = [];
+
+            let pointerX, pointerY;
+
+            let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0004 };
+
+            let touchInput = false;
+
+            generate();
+            resize();
+            step();
+
+            window.onresize = resize;
+            canvas.onmousemove = onMouseMove;
+            canvas.ontouchmove = onTouchMove;
+            canvas.ontouchend = onMouseLeave;
+            document.onmouseleave = onMouseLeave;
+
+            function generate() {
+                for (let i = 0; i < STAR_COUNT; i++) {
+                    stars.push({
+                        x: 0,
+                        y: 0,
+                        z: STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE),
+                    });
+                }
+            }
+
+            function placeStar(star) {
+                star.x = Math.random() * width;
+                star.y = Math.random() * height;
+            }
+
+            function recycleStar(star) {
+                let direction = "z";
+
+                let vx = Math.abs(velocity.x),
+                    vy = Math.abs(velocity.y);
+
+                if (vx > 1 || vy > 1) {
+                    let axis;
+
+                    if (vx > vy) {
+                        axis = Math.random() < vx / (vx + vy) ? "h" : "v";
+                    } else {
+                        axis = Math.random() < vy / (vx + vy) ? "v" : "h";
+                    }
+
+                    if (axis === "h") {
+                        direction = velocity.x > 0 ? "l" : "r";
+                    } else {
+                        direction = velocity.y > 0 ? "t" : "b";
+                    }
+                }
+
+                star.z = STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE);
+
+                if (direction === "z") {
+                    star.z = 0.1;
+                    star.x = Math.random() * width;
+                    star.y = Math.random() * height;
+                } else if (direction === "l") {
+                    star.x = -OVERFLOW_THRESHOLD;
+                    star.y = height * Math.random();
+                } else if (direction === "r") {
+                    star.x = width + OVERFLOW_THRESHOLD;
+                    star.y = height * Math.random();
+                } else if (direction === "t") {
+                    star.x = width * Math.random();
+                    star.y = -OVERFLOW_THRESHOLD;
+                } else if (direction === "b") {
+                    star.x = width * Math.random();
+                    star.y = height + OVERFLOW_THRESHOLD;
+                }
+            }
+
+            function resize() {
+                scale = window.devicePixelRatio || 1;
+
+                width = window.innerWidth * scale;
+                height = window.innerHeight * scale;
+
+                canvas.width = width;
+                canvas.height = height;
+
+                stars.forEach(placeStar);
+            }
+
+            function step() {
+                context.clearRect(0, 0, width, height);
+
+                update();
+                render();
+
+                requestAnimationFrame(step);
+            }
+
+            function update() {
+                velocity.tx *= 0.96;
+                velocity.ty *= 0.96;
+
+                velocity.x += (velocity.tx - velocity.x) * 0.8;
+                velocity.y += (velocity.ty - velocity.y) * 0.8;
+
+                stars.forEach((star) => {
+                    star.x += velocity.x * star.z;
+                    star.y += velocity.y * star.z;
+
+                    star.x += (star.x - width / 2) * velocity.z * star.z;
+                    star.y += (star.y - height / 2) * velocity.z * star.z;
+                    star.z += velocity.z;
+
+                    // recycle when out of bounds
+                    if (star.x < -OVERFLOW_THRESHOLD || star.x > width + OVERFLOW_THRESHOLD || star.y < -OVERFLOW_THRESHOLD || star.y > height + OVERFLOW_THRESHOLD) {
+                        recycleStar(star);
+                    }
+                });
+            }
+
+            function render() {
+                stars.forEach((star) => {
+                    context.beginPath();
+                    context.lineCap = "round";
+                    context.lineWidth = STAR_SIZE * star.z * scale;
+                    context.globalAlpha = 0.5 + 0.5 * Math.random();
+                    context.strokeStyle = STAR_COLOR;
+
+                    context.beginPath();
+                    context.moveTo(star.x, star.y);
+
+                    var tailX = velocity.x * 2,
+                        tailY = velocity.y * 2;
+
+                    // stroke() wont work on an invisible line
+                    if (Math.abs(tailX) < 0.1) tailX = 0.5;
+                    if (Math.abs(tailY) < 0.1) tailY = 0.5;
+
+                    context.lineTo(star.x + tailX, star.y + tailY);
+
+                    context.stroke();
+                });
+            }
+
+            function movePointer(x, y) {
+                if (typeof pointerX === "number" && typeof pointerY === "number") {
+                    let ox = x - pointerX,
+                        oy = y - pointerY;
+
+                    velocity.tx = velocity.tx + (ox / 8) * scale * (touchInput ? 1 : -1);
+                    velocity.ty = velocity.ty + (oy / 8) * scale * (touchInput ? 1 : -1);
+                }
+
+                pointerX = x;
+                pointerY = y;
+            }
+
+            function onMouseMove(event) {
+                touchInput = false;
+
+                movePointer(event.clientX, event.clientY);
+            }
+
+            function onTouchMove(event) {
+                touchInput = true;
+
+                movePointer(event.touches[0].clientX, event.touches[0].clientY, true);
+
+                event.preventDefault();
+            }
+
+            function onMouseLeave() {
+                pointerX = null;
+                pointerY = null;
+            }
+        </script>
+    </body>
+    
+</html>
